@@ -1,14 +1,31 @@
-<h1>Books</h1>
-<%= form_with model: @book, url: '/books', method: :post do |f| %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="application.css">
+  </head>
+  <body>
 
-  <h2>New book</h2>
+    <h1>Books</h1>
+    <%= form_with model: @book, url: '/books', method: :post do |f| %>
 
-  <h3>Title</h3>
-  <%= f.text_field :title %>
+    <h2>New book</h2>
 
-  <h3>Body</h3>
-  <%= f.text_area :body %>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <%= f.text_field :title %>
 
-  <%= f.submit 'Create Book' %>
+        <th>Body</th>
+        <%= f.text_area :body %>
 
-<% end %>
+        <th clospan="3"></th>
+      </tr>
+    </thead>
+
+    <%= f.submit 'Create Book' %>
+
+    <% end %>
+
+  </body>
+
+</html>
