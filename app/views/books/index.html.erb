@@ -6,23 +6,38 @@
   <body>
 
     <h1>Books</h1>
-    <%= form_with model: @book, url: '/books', method: :post do |f| %>
+
+    <% @book.each do |book| %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <span><%= book.title %></span>
+
+          <th>Body</th>
+          <span><%= book.body %></span>
+
+          <th clospan="3"></th>
+        </tr>
+      </thead>
+    </table>
+
+    <% end %>
 
     <h2>New book</h2>
 
-    <thead>
-      <tr>
-        <th>Title</th>
+    <%= form_with model: @book, url: '/books', method: :post do |f| %>
+
+
+        <h3>Title</h3>
         <%= f.text_field :title %>
 
-        <th>Body</th>
+        <h3>Body</h3>
         <%= f.text_area :body %>
 
-        <th clospan="3"></th>
-      </tr>
-    </thead>
+      <%= f.submit 'Create Book' %>
 
-    <%= f.submit 'Create Book' %>
 
     <% end %>
 
