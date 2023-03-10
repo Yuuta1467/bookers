@@ -11,7 +11,7 @@ th{
   padding-bottom: 5px;
 }
 
-p, ol, ul, td{
+p, td{
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -22,11 +22,5 @@ a:visited{
   color: #666;
 }
 
-.field, .actions{
-  margin-bottom: 10px;
-}
 
-bodyrails{
-  display: block;
-}
 
